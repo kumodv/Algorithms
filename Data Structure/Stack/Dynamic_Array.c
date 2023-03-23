@@ -34,7 +34,7 @@ int main(){
 	pop(&stack);
 	Show_stack(&stack);
 
-	free(&stack);
+	free(stack.data);
 	printf("stack is free!");
 	return (0);
 }
@@ -92,7 +92,10 @@ void Show_stack(t_stack *s){
         printf("[ ");
         for (int i = 0; i <= s->top; i++)
         {
-            printf("%d, ", s->data[s->top-i]);
+			if(i != s->top)
+				printf("%d, ", s->data[s->top-i]);
+			else
+        		printf("%d", s->data[s->top-i]);
         }
         printf(" ]\n");
     }
