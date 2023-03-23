@@ -35,7 +35,7 @@ int main(){
 	Show_stack(&stack); //display stack with 3 elements
 
 	free(stack.data);
-	printf("stack is free!");
+	printf("stack is free!\n");
 	return (0);
 }
 
