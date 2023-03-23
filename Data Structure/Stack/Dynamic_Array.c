@@ -23,16 +23,16 @@ int main(){
 	int		random;
 	Stack_initialize(&stack, 2);
 
-	Show_stack(&stack);
-	for(int i = 1; i <= 5; i++){
+	Show_stack(&stack); // display initial stack (empty)
+	for(int i = 1; i <= 5; i++){ //push 5 random numbers onto the stack
 		random = get_random();
 		push(&stack, random);
 	}
-	Show_stack(&stack);
+	Show_stack(&stack); //display stack with 5 elements
 
 	pop(&stack);
 	pop(&stack);
-	Show_stack(&stack);
+	Show_stack(&stack); //display stack with 3 elements
 
 	free(stack.data);
 	printf("stack is free!");
@@ -40,9 +40,9 @@ int main(){
 }
 
 void	Stack_initialize(t_stack *s, int size){
-	s->top = -1;
+	s->top = -1; //set top index to -1 (empty stack)
 	s->max_size = size;
-	s->data = (int *)malloc(size * sizeof(int));
+	s->data = (int *)malloc(size * sizeof(int)); //allocate memory for stack
 }
 
 int	is_empty(t_stack *s){
@@ -57,13 +57,13 @@ int	is_full(t_stack *s){
 
 void	push(t_stack *s, int value){
 	if (is_full(s)){
-		s->max_size *= 2;
+		s->max_size *= 2; //if the stack is full, double the stack size and reallocate memory
 		s->data = realloc(s->data, sizeof(int) * s->max_size);
 		printf("Memory reallocation : Stack is full\n");
 		printf("stack size : %d\n", s->max_size);
 	}
-	s->top++;
-	s->data[s->top] = value;
+	s->top++; // increment top index
+	s->data[s->top] = value; // add element to the stack
 }
 
 int	pop(t_stack *s){
@@ -77,6 +77,7 @@ int	pop(t_stack *s){
 	return (0);
 }
 
+//function to return the value at the top. Used when viewing top value
 int peek_stack(t_stack *s){
 	int value = s->data[s->top];
 	return (value);
@@ -88,7 +89,7 @@ void Show_stack(t_stack *s){
     } else{
         printf("\n[Show Stack]\n");
         printf("*top of the Stack : %d\n", peek_stack(s));
-
+		printf("*size of the Stack : %d\n", s->max_size);
         printf("[ ");
         for (int i = 0; i <= s->top; i++)
         {
