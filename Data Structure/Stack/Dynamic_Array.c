@@ -33,6 +33,9 @@ int main(){
 	pop(&stack);
 	pop(&stack);
 	Show_stack(&stack);
+
+	free(&stack);
+	printf("stack is free!");
 	return (0);
 }
 
