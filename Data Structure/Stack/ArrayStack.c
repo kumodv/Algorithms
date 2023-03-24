@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #define CAPACITY 100
 
@@ -57,4 +58,4 @@ int main(){
 	print_Stack();
 	Pop();
 	print_Stack();
-}
+} 
