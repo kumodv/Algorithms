@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <limits.h>
 
 typedef struct stack{
 	int top; //top of array index
@@ -9,14 +10,13 @@ typedef struct stack{
 } t_stack;
 
 void	Stack_initialize(t_stack *s, int size);
-int	is_empty(t_stack *s);
 void	push(t_stack *s, int value);
+void	Show_stack(t_stack *s);
 int	pop(t_stack *s);
 int peek_stack(t_stack *s);
-void	Show_stack(t_stack *s);
-int	get_random();
+int	is_empty(t_stack *s);
 int	is_full(t_stack *s);
-int	pop(t_stack *s);
+int	get_random();
 
 int main(){
 	t_stack stack;
@@ -74,6 +74,16 @@ int	pop(t_stack *s){
 		return (value);
 	}
 	printf("Stack is empty T T\n");
+	/* if (is_empty(s)){
+			printf("Stack is empty T T\n");
+			return (INT_MIN);
+			}
+		else{
+			int value = s->data[s->top];
+			s->top--;
+			printf("Pop value : %d\n", value);
+			return (value);
+		} */
 	return (0);
 }
 
