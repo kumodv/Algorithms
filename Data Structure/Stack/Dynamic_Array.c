@@ -46,9 +46,7 @@ void	Stack_initialize(t_stack *s, int size){
 }
 
 int	is_empty(t_stack *s){
-	if (s->top == -1)
-		return (1);
-	return (0);
+	return (s->top == -1);
 }
 
 int	is_full(t_stack *s){
