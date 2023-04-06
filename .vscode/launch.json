@@ -8,7 +8,7 @@
 			"type": "lldb",
 			"request": "launch",
 			"name": "Debug",
-			"program": "${workspaceFolder}/Data Structure/Queue/a.out", //실행파일 이름
+			"program": "${workspaceFolder}/Sorting/a.out", //실행파일 이름
 			"args": [""], //실행 뒤에 들어갈 args //test_maps/42.fdf
 			"cwd": "${workspaceFolder}",
 			//"MIMode": "lldb",

@@ -6,8 +6,8 @@
 		{
 			"label": "build",
 			"type": "shell",
-			"command": "gcc -g", //make
-			"args": ["a.out"], //파일이름
+			"command": "", //make
+			"args": [""], //파일이름
 			"group": {
 				"kind": "build",
 				"isDefault": true
