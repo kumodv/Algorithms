@@ -151,4 +151,4 @@ void print_deque(Deque *dq)
 int pick_size(Deque *dq)
 {
 	return(dq->size);
-} 
+}
